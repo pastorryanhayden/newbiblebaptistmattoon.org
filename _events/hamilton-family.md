@@ -6,7 +6,7 @@ all_day: true
 location: The Church
 description_markdown: Missionaries to Scotland
 ministry:
-featured_image:
+featured_image: /uploads/hamiltons.png
 page_markdown: 'The Hamilton Family, missionaries to Scotland, will be in the church presenting their ministry on Sunday, April 9th.'
 layout: single_event
 ---

@@ -73,7 +73,7 @@ main_image: /uploads/bbc.jpg
     <div class="homeEvents__feature">
         <a href="{{ event.url }}">
             {% if event.featured_image %}
-            <img src="{{ event.featured_image }}" alt="{{ event.title }}" width="526" >
+            <img src="{{site.url}}/{{ event.featured_image }}" alt="{{ event.title }}" width="526" >
             {% else %}
             <img src="{{site.data.settings.default_calendar_image}}" alt="Default Featured Image - {{ event.event_name }}">
             {% endif %}
