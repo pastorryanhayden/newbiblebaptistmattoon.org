@@ -1,14 +1,12 @@
 ---
 layout: default
 ---
-<div class="aboutContent">
-    <div class="aboutContent__content" id="content">
+<div class="aboutPage">
+    <div class="aboutPage__Title">
+        <h1 class="editable">About Us: Our Leadership &amp; Staff</h1>
+    </div><!--/aboutPage__Title-->
+    <div class="aboutPage__Content">
 
-        <div class="aboutContent__content__pageHeader">
-        <img src="{{site.default_about_image}}" alt="">
-        <h1>About Us: <span>Leadership &amp; Staff</span></h1>
-        </div><!--/page-header-->
-    <article class="aboutContent__content__content">
         {% assign senior_pastor = site.leaders | where_exp:"leader",
 "leader.is_senior_pastor == true" %}
 {% assign leaders = site.leaders | where_exp:"leader",
@@ -39,6 +37,4 @@ layout: default
            <div style="clear: right"></div>
        </div><!--/regular leader-div-->
        {% endfor %}
-    </article>
-    </div><!--/main-content-->
-</div><!--/about-content-->
+</div>

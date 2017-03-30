@@ -1,0 +1,29 @@
+---
+layout: default
+header_image: /uploads/welcome.jpg
+---
+<style>
+    .aboutPage__Title {
+        background: url({{page.header_image}}) no-repeat center center;
+         background-size: cover;
+         height: 350px;
+    }
+</style>
+
+<div class="aboutPage">
+    <div class="aboutPage__Title">
+        <h1>Contact Us</h1>
+    </div><!--/aboutPage__Title-->
+    <div class="aboutPage__Content">
+       <div class="contact-info">
+			<p class="intro editable">We'd love to hear from you.  You can either contact us with the information below or use this form:</p>
+       	<form action="https://formspree.io/{{site.data.settings.church_email}}"
+      method="POST" class="contact-form">
+    <input type="text" name="name" placeholder="name">
+    <input type="tel" name="phone" placeholder="phone">
+    <input type="email" name="_replyto" placeholder="email">
+    <input type="submit" value="Send" class="button">
+</form>
+       </div><!--/contact-info-->
+    </div><!--/aboutPage__Content-->
+</div><!--/aboutPage-->
