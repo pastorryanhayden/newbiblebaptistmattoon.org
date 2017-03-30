@@ -1,0 +1,44 @@
+---
+layout: default
+---
+<div class="aboutContent">
+    <div class="aboutContent__content" id="content">
+
+        <div class="aboutContent__content__pageHeader">
+        <img src="{{site.default_about_image}}" alt="">
+        <h1>About Us: <span>Leadership &amp; Staff</span></h1>
+        </div><!--/page-header-->
+    <article class="aboutContent__content__content">
+        {% assign senior_pastor = site.leaders | where_exp:"leader",
+"leader.is_senior_pastor == true" %}
+{% assign leaders = site.leaders | where_exp:"leader",
+"leader.is_senior_pastor != true" %}
+       {% for leader in senior_pastor %}
+       <div class="leader senior">
+           <h3>{{leader.name}}</h3>
+           <h5 class="role">{{leader.position}}</h5>
+           {% if leader.thumbnail %}
+            <img class="thumbnail" src="{{leader.thumbnail}}" alt="">
+           {% endif %}
+           {% if leader.content %}
+           {{ leader.content | markdownify }}
+           {% endif %}
+           <div style="clear: right"></div>
+       </div><!--/senior-pastor-div-->
+       {% endfor %}
+       {% for leader in leaders %}
+       <div class="leader">
+           <h3>{{leader.name}}</h3>
+           <h5 class="role">{{leader.position}}</h5>
+           {% if leader.thumbnail %}
+            <img class="thumbnail" src="{{leader.thumbnail}}" alt="">
+           {% endif %}
+           {% if leader.content %}
+           {{ leader.content | markdownify }}
+           {% endif %}
+           <div style="clear: right"></div>
+       </div><!--/regular leader-div-->
+       {% endfor %}
+    </article>
+    </div><!--/main-content-->
+</div><!--/about-content-->

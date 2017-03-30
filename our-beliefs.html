@@ -1,0 +1,30 @@
+---
+layout: default
+beliefs:
+    - 
+        title: Sample Belief
+        icon: user
+        content_markdown: |
+            This is just some **content** testing out.
+---
+<div class="aboutContent">
+    <div class="aboutContent__content" id="content">
+
+        <div class="aboutContent__content__pageHeader">
+        <img src="{{site.default_about_image}}" alt="">
+        <h1>About Us: <span>Our Beliefs</span></h1>
+        </div><!--/page-header-->
+    <article class="aboutContent__content__content">
+    <div class="beliefs row small-up-1 medium-up-2 large-up-4">
+       {% for item in page.beliefs %}
+       <div class="belief column">
+        <h3><i class="fa fa-{{item.icon}}"></i> {{item.title}}</h3>
+        {% if item.content_markdown %}
+            {{item.content_markdown | markdownify}}
+        {% endif %}
+        </div><!--/belief-->
+       {% endfor %}
+         </div><!--/beliefs-->
+    </article>
+    </div><!--/main-content-->
+</div><!--/about-content-->

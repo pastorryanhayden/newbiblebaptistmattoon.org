@@ -1,0 +1,93 @@
+---
+layout: default
+---
+{% assign leaders = site.ministry_leaders | where_exp:"item",
+"item.name == page.leader[0] "%}
+
+{% if page.header_image %}
+<style>
+    {% if page.header_image %}
+.ministriesPage__Title {
+background: url({{page.header_image}}) no-repeat;
+background-size: cover;
+}
+    {% else %}
+    .ministriesPage__Title {
+background: url({{site.default_header_image | prepend: site.url }}) no-repeat;
+background-size: cover;
+    }
+    {% endif %}
+
+</style>
+{% endif %}
+
+
+
+<div class="ministriesPage">
+    <div class="ministriesPage__Title">
+        <h1>{{page.title}}</h1>
+        <div class="ministriesDescription">
+            <p>{{page.description}}</p>
+        </div><!--/ministriesDescription-->
+    </div><!--/ministriesPage__Title-->
+    <div class="ministriesPage__Content">
+        <div class="ministriesPage__Content-main-content">
+            <div class="ministryInfo">
+                <div class="ministryInfo-ministry">
+                {% if page.group %}
+                    <p><i class="fa fa-users"></i> Group: <span>{{page.group}}</span></p>
+                {% endif %}
+                {% if page.time_of_meetings %}
+                    <p><i class="fa fa-clock-o"></i> Meeting Time: <span>{{page.time_of_meetings}}</span></p>
+                {% endif %}
+                {% if page.place_of_meetings %}
+                    <p><i class="fa fa-map"></i> Meeting Place: <span>{{page.place_of_meetings}}</span></p>
+                {% endif %}
+                </div><!--ministryInfo-ministry-->
+                {% for leader in leaders %}
+                <div class="ministryInfo-leader">
+                    <p><i class="fa fa-user"></i> Leader: <span>{{leader.name}}</span></p>
+                    {% if leader.thumbnail %}
+                    <img src="{{leader.thumbnail}}" alt="" class="thumbnail" width="100px">
+                    {% endif %}
+                    {% if leader.bio_markdown %}
+                    <p class="leaderDescription">{{leader.bio_markdown}}</p>
+                    {% endif %}
+                    {% if leader.phone %}
+                    <p><i class="fa fa-phone"></i> <span>{{leader.phone}}</span></p>
+                    {% endif %}
+                    {% if leader.email %}
+                    <p><i class="fa fa-envelope"></i><span> {{leader.email}}</span></p>
+                    {% endif %}
+                </div><!--/ministryInfo-leader-->
+                {% endfor %}
+            </div><!--/ministryInfo-->
+            {{content}}
+        </div><!--/ministriesPage__Content-main-content-->
+       
+        <div class="ministriesPage__Content-secondary-content">
+                {% if page.logo  %}
+                <div class="ministriesLogo">
+                    <img src="{{page.logo}}" alt="ministry logo">
+                </div><!--ministriesLogo-->
+                {% endif %}
+                
+                
+                {% comment %}<div class="ministriesCalendar">
+                    <h3>Upcoming Ministry Events:</h3>
+                    <div data-tockify-component="mini"  data-tockify-calendar="biblebaptistchurch" data-tockify-tags="#" data-tockify-view="agenda"></div>
+                    <script data-tockify-script="embed" src="https://public.tockify.com/browser/embed.js"></script>
+                     
+                </div><!--/ministriesCalendar-->
+               
+                <div class="ministriesPhotos">
+                    <h3>Recent Ministry Photos:</h3>
+                    <div class="galleryWrapper">
+                        <a href="#" class="thumbnail"><img src="#" alt="#"></a>
+                    </div> <!-- galleryWrapper -->
+
+                </div><!--/ministriesPhotos-->{% endcomment %}
+               
+        </div><!--/ministriesPage__Content-secondary-content-->
+    </div><!--/ministriesPage__Content-->
+</div><!--ministriesPage-->

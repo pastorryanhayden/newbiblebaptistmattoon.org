@@ -1,0 +1,30 @@
+---
+layout: default
+---
+
+{% if page.featured_image %}
+            <style>
+                .aboutPage__Title {
+                    background: url({{page.featured_image}}) no-repeat center center;
+                    background-size: cover;
+
+                }
+            </style>
+        {% else %}
+                <style>
+                    .aboutPage__Title {
+                        background: url({{site.default_about_image}}) no-repeat center center;
+                        background-size: cover;
+                    }
+                </style>
+        {% endif %}
+
+
+<div class="aboutPage">
+    <div class="aboutPage__Title">
+        <h1>{{page.title}}</h1>
+    </div><!--/aboutPage__Title-->
+    <div class="aboutPage__Content editable">
+        {{content}}
+    </div><!--/aboutPage__Content-->
+    </div><!--/aboutPage-->

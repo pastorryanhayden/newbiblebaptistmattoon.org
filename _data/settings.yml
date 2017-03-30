@@ -1,0 +1,35 @@
+church_name: Bible Baptist Church
+description: 
+church_logo_image_path: /uploads/logoblue.png
+church_logo2_image_path: /uploads/logo2.jpg
+default_header_image: /uploads/logo2.jpg
+phone: (217) 499-0822
+church_email: pastorryanhayden@gmail.com
+facebook: 'https://www.facebook.com/biblebaptistmattoon'
+twitter: https://twitter.com/BBCmattoon
+youtube: 
+address: 3401 Marion Ave
+address2:
+City: Mattoon
+State: IL
+Zip: '61938'
+main_blog_image: /uploads/1.jpg
+main_sermon_image: /uploads/2.jpg
+default_calendar_image: /uploads/3.jpg
+services:
+  - name: Sunday School
+    time_of_service: 9:30 am
+    day: Sunday
+  - name: Morning Worship
+    time_of_service: 10:30 am
+    day: Sunday
+  - name: Evening Worship
+    time_of_service: 6:00 pm
+    day: Sunday
+  - name: Wednesday Prayer Meeting
+    time_of_service: 7:00 pm
+    day: Wednesday
+lattitude: '39.4761915'
+longitude: '-88.4009887'
+map_zoom_level: 13
+Google_calendar_id: leonhart4@gmail.com

@@ -1,0 +1,92 @@
+<style type="text/css">
+    h1 a {
+    text-indent: -5000px;
+    background: url({{site.data.settings.church_logo_image_path}}) no-repeat center center;
+    width: 367px;
+    height: 65px;
+    line-height: 65px;
+    display: block;
+    margin-left: 20px;
+    }
+</style>
+<div class="off-canvas-wrapper">
+<div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+<header>
+    <div class="infoBar">
+    <h1><a href="{{site.url}}/"  style="background: url({{site.data.settings.church_logo_image_path}}) no-repeat center center;">{{site.data.settings.church_name}} <span>{{site.data.settings.City}}, {{{{site.data.settings.State}}}}</span></a></h1>
+    <div class="service-times">
+            {% include service-schedule.html %}
+    </div><!--/service-times-->
+    <div class="contact">
+            {% include address-header.html %}
+    </div><!--/contact-->
+
+    </div><!--/infoBar-->
+<div class="MainNavigation">
+        <ul class="dropdown menu" data-dropdown-menu>
+            <li><a href="{{site.url}}/welcome.html">WELCOME</a></li>
+            <li class="is-dropdown-submenu-parent"><a href="#">ABOUT US</a>
+                <ul class="menu">
+                    <li><a href="{{site.url}}/our-leadership.html">Our Leadership</a></li>
+                    <li><a href="{{site.url}}/our-beliefs.html">Our Beliefs</a></li>
+                    {% for item in site.about_pages %}
+                    <li><a href="{{ item.url }}">{{item.title}}</a></li>
+                    {% endfor %}
+                    <li><a href="{{site.url}}/the-gospel.html">The Gospel</a></li>
+                </ul>
+            </li><!--/End of About Us-->
+            <li class="is-dropdown-submenu-parent"><a href="#">MINISTRIES</a>
+                <ul class="menu">
+                    {% for item in site.ministries %}
+                    <li><a href="{{ item.url}}">{{item.title}}</a></li>
+                    {% endfor %}
+                </ul>
+            </li><!--/ministries-->
+            <li><a href="{{site.url}}/calendar-list.html">CALENDAR</a></li>
+            <li class="is-dropdown-submenu-parent"><a href="#">MEDIA</a>
+                <ul class="menu">
+                    <li><a href="{{site.url}}/media/sermons.html">Sermons</a></li>
+                    <li><a href="{{site.url}}/media/blog-list.html">Blog</a></li>
+                    <li><a href="{{site.url}}/media/gallery.html">Gallery</a></li>
+                </ul>
+            </li><!--/media-->
+            <li><a href="{{site.url}}/contact-us.html">CONTACT US</a></li>
+        </ul><!--.dropdown menu -->
+</div><!--/MainNavigation-->
+<div class="MobileNavigation">
+    <button type="button" data-toggle="offCanvas"> <i class="fa fa-bars"></i></button>
+</div>
+</header>
+<div class="off-canvas position-right mobile-sidebar" id="offCanvas" data-off-canvas data-position="right">
+    <ul class="vertical menu" data-accordion-menu>
+    <li><a href="{{site.url }}/">HOME</a></li>
+    <li><a href="{{site.url}}/welcome.html">WELCOME</a></li>
+    <li><a href="#">ABOUT US</a>
+        <ul class="menu vertical">
+            <li><a href="{{site.url}}/our-leadership.html">Our Leadership</a></li>
+                    <li><a href="{{site.url}}/our-beliefs.html">Our Beliefs</a></li>
+                    {% for item in site.about_pages %}
+                    <li><a href="{{ item.url }}">{{item.title}}</a></li>
+                    {% endfor %}
+                    <li><a href="{{site.url}}/the-gospel.html">The Gospel</a></li>
+        </ul>
+    </li><!--/End of About Us-->
+    <li><a href="#">MINISTRIES</a>
+        <ul class="menu vertical">
+                    {% for item in site.ministries %}
+                    <li><a href="{{ item.url}}">{{item.title}}</a></li>
+                    {% endfor %}
+                </ul>
+    </li><!--/ministries-->
+   <li><a href="{{site.url}}/calendar-list.html">CALENDAR</a></li>
+    <li><a href="#">MEDIA</a>
+        <ul class="menu vertical">
+            <li><a href="{{site.url}}/media/sermons.html">Sermons</a></li>
+                    <li><a href="{{site.url}}/media/blog-list.html">Blog</a></li>
+                    <li><a href="{{site.url}}/media/gallery.html">Gallery</a></li>
+        </ul>
+    </li><!--/media-->
+   <li><a href="{{site.url}}/contact-us.html">CONTACT US</a></li>
+</ul><!--.dropdown menu --></div><!--slideout menu-->
+<div class="off-canvas-content" data-off-canvas-content>
+

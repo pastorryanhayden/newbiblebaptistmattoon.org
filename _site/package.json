@@ -1,0 +1,13 @@
+{
+  "name": "california",
+  "version": "1.0.0",
+  "description": "A pure jekyll version of the california theme from sitesfor.church",
+  "main": "index.js",
+  "author": "Ryan Hayden",
+  "license": "MIT",
+  "dependencies": {
+    "browser-sync": "^2.18.8",
+    "gulp": "^3.9.1",
+    "gulp-shell": "^0.6.3"
+  }
+}

@@ -1,0 +1,51 @@
+<ul class="menu vertical">
+    {% assign sunday = site.data.settings.services | where: "day", "Sunday" %}
+     {% if sunday[0].time_of_service %}
+    {% for service in sunday %}
+    <li>{{service.name}} {% if service.time_of_service %}<span> {{service.time_of_service}}</span>{% endif %}</li>
+    {% endfor %}
+    {%endif%}
+
+    {% assign monday = site.data.settings.services | where: "day", "Monday" %}
+     {% if monday[0].time_of_service %}
+    {% for service in monday %}
+    <li>{{service.name}} {% if service.time_of_service %}<span> {{service.time_of_service}}</span>{% endif %}</li>
+    {% endfor %}
+    {%endif%}
+
+    {% assign tuesday = site.data.settings.services | where: "day", "Tuesday" %}
+     {% if tuesday[0].time_of_service %}
+    {% for service in tuesday %}
+    <li>{{service.name}} {% if service.time_of_service %}<span> {{service.time_of_service}}</span>{% endif %}</li>
+    {% endfor %}
+    {%endif%}
+
+    {% assign wednesday = site.data.settings.services | where: "day", "Wednesday" %}
+     {% if wednesday[0].time_of_service %}
+    {% for service in wednesday %}
+    <li>{{service.name}} {% if service.time_of_service %}<span> {{service.time_of_service}}</span>{% endif %}</li>
+    {% endfor %}
+    {%endif%}
+
+    {% assign thursday = site.data.settings.services | where: "day", "Thursday" %}
+     {% if thursday[0].time_of_service %}
+    {% for service in thursday %}
+    <li>{{service.name}} {% if service.time_of_service %}<span> {{service.time_of_service}}</span>{% endif %}</li>
+    {% endfor %}
+    {%endif%}
+
+    {% assign Friday = site.data.settings.services | where: "day", "Friday" %}
+     {% if Friday[0].time_of_service %}
+    {% for service in Friday %}
+    <li>{{service.name}} {% if service.time_of_service %}<span> {{service.time_of_service}}</span>{% endif %}</li>
+    {% endfor %}
+    {%endif%}
+
+    {% assign Saturday = site.data.settings.services | where: "day", "Saturday" %}
+     {% if Saturday[0].time_of_service %}
+    {% for service in Saturday %}
+    <li>{{service.name}} {% if service.time_of_service %}<span> {{service.time_of_service}}</span>{% endif %}</li>
+    {% endfor %}
+    {%endif%}
+
+</ul>
