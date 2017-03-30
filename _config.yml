@@ -36,6 +36,7 @@ collections:
     _show_content: false
   events:
     output: true
+    _show_content: false
   leaders:
     output: false 
 
